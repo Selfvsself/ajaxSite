@@ -8,7 +8,7 @@ public interface IRepository {
 
     void add(Book book);
 
-    void delete(int id);
+    void delete(String id);
 
     void update(Book book);
 

@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>jQuery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="lib\jquery-3.4.1.js"></script>
     <script type="text/javascript" src="script.js"></script>
@@ -12,7 +13,14 @@
       <span>Название книги:</span> <input id="title" type="text">
       <button onclick="clickAdd()">Добавить</button>
     </div>
-    <div class="result">Делаем запрос</div>
+    <table class="result" border="1">
+      <caption>Список книг</caption>
+      <tr>
+        <th>ID</th>
+        <th>Автор</th>
+        <th>Название</th>
+      </tr>
+    </table>
     <button  onclick="getRequest()">Get request()</button>
   </body>
 </html>

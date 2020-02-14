@@ -50,8 +50,21 @@ public class Repository implements IRepository {
         }
     }
 
-    public void delete(int id) {
-
+    public void delete(String id) {
+        System.out.println("Try delete book " + id);
+        try (Connection connection = DriverManager.getConnection(url, user, password);
+             PreparedStatement preparedStatement = connection.prepareStatement(
+                     "DELETE FROM books_table WHERE id=?")) {
+            Class.forName("org.postgresql.Driver");
+            int indexPrepared = 0;
+            preparedStatement.setString(++indexPrepared, id);
+            preparedStatement.executeUpdate();
+            System.out.println("deleting book " + id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void update(Book book) {

@@ -10,7 +10,7 @@ import ru.test.test.repository.IRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping()
+@RequestMapping("book")
 public class MainController {
 
     IRepository repository;
@@ -29,5 +29,10 @@ public class MainController {
         Book book = new Book(author, title);
         book.setId(book.calcId());
         repository.add(book);
+    }
+
+    @GetMapping("delete")
+    public void deleteBook(@RequestParam String id) {
+        repository.delete(id);
     }
 }
