@@ -1,26 +1,37 @@
 <html>
-  <head>
+<head>
     <title>jQuery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="lib\jquery-3.4.1.js"></script>
     <script type="text/javascript" src="script.js"></script>
-  </head>
-  <body>
-    <h2>CRUD приложение с использованием ajax</h2>
-    <div>
-      <span>Автор:</span> <input id="author" type="text">
-      <span>Название книги:</span> <input id="title" type="text">
-      <button onclick="clickAdd()">Добавить</button>
-    </div>
-    <table class="result" border="1">
-      <caption>Список книг</caption>
-      <tr>
+    <script type="text/javascript" src="script2.js"></script>
+</head>
+<body>
+<h2>CRUD приложение с использованием ajax</h2>
+<div>
+    <span>Автор:</span> <input id="author" type="text">
+    <span>Название книги:</span> <input id="title" type="text">
+    <button onclick="clickAdd()">Добавить</button>
+</div>
+<table class="result" border="1">
+    <caption>Список книг</caption>
+    <tr>
         <th>ID</th>
         <th>Автор</th>
         <th>Название</th>
-      </tr>
-    </table>
-    <button  onclick="getRequest()">Get request()</button>
-  </body>
+    </tr>
+</table>
+<table class="resulta" border="1">
+    <caption>Список авторов</caption>
+    <tr>
+        <th>ID</th>
+        <th>Автор</th>
+    </tr>
+</table>
+<div>
+    <button onclick="getRequest()">Get request()</button>
+    <button onclick="getAuthors()">Get request()</button>
+</div>
+</body>
 </html>

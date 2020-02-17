@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.test.test.model.Author;
 import ru.test.test.model.Book;
 import ru.test.test.repository.IRepository;
 
@@ -20,8 +21,13 @@ public class MainController {
     }
 
     @GetMapping("all")
-    public List<Book> getTest() {
+    public List<Book> getAllBooks() {
         return repository.getAll();
+    }
+
+    @GetMapping("allA")
+    public List<Author> getAllAuthors() {
+        return repository.getAllA();
     }
 
     @GetMapping("add")
