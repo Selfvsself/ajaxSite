@@ -11,7 +11,7 @@ function getRequest(){
 				var idBook = String(books[i].id);
 				var authorBook = books[i].author;
 				var titleBook = String(books[i].title);
-				$(".result").append("<tr><td>" + idBook + "</td><td>" + authorBook + "</td><td>" + titleBook + "</td><th><button onclick='" + deleteBook.bind(null, idBook) + "'>del</button></tr>");
+				$(".result").append("<tr><td>" + idBook + "</td><td>" + authorBook + "</td><td>" + titleBook + "</td><th><button onclick=" + deleteBook.bind(null, idBook) + ">del</button></tr>");
 			}
 		}
 	}
@@ -42,6 +42,7 @@ function addBook(author, title) {
 }
 
 function deleteBook(idBook) {
+	console.log('delete ' + idBook);
 	var xhr = new XMLHttpRequest();
 
 	xhr.open('GET', 'http://localhost:8090/book/delete?id=' + idBook);

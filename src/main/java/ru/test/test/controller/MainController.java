@@ -1,5 +1,6 @@
 package ru.test.test.controller;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,7 @@ public class MainController {
 
     IRepository repository;
 
-    public MainController(IRepository repository) {
+    public MainController(@Qualifier("springRepository") IRepository repository) {
         this.repository = repository;
     }
 
@@ -39,6 +40,7 @@ public class MainController {
 
     @GetMapping("delete")
     public void deleteBook(@RequestParam String id) {
+        System.out.println("delete book with id = " + id);
         repository.delete(id);
     }
 }
